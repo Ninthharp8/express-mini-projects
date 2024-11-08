@@ -84,8 +84,6 @@ class AlumnosController {
     // Ruta para GET general
     async getAll(req, res) {
         try {
-            // Devolver la lista completa de alumnos
-            const alumnos = await alumnos.find();
             res.status(200).json(alumnos);
         } catch (error) {
             res.status(500).send(error);
@@ -95,3 +93,4 @@ class AlumnosController {
 }
 
 export default new AlumnosController();
+
