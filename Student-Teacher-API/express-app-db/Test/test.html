@@ -1,0 +1,29 @@
+<form id="formAlumno" enctype="multipart/form-data">
+    <input type="text" name="nombres" placeholder="Nombres" required>
+    <input type="text" name="apellidos" placeholder="Apellidos" required>
+    <input type="text" name="matricula" placeholder="Matrícula" required>
+    <input type="text" name="correo" placeholder="Correo" required>
+    <input type="password" name="password" placeholder="Contraseña" required>
+    <input type="file" name="fotoPerfil" required>
+    <button type="submit">Enviar</button>
+</form>
+
+<script>
+  document.getElementById('formAlumno').addEventListener('submit', async (event) => {
+    event.preventDefault();
+    
+    const formData = new FormData(event.target);
+    
+    try {
+      const response = await fetch('http://ec2-3-216-29-105.compute-1.amazonaws.com:3000/alumnos', {
+        method: 'POST',
+        body: formData
+      });
+
+      const data = await response.json();
+      console.log('Respuesta del servidor:', data);
+    } catch (error) {
+      console.error('Error al enviar los datos:', error);
+    }
+  });
+</script>
