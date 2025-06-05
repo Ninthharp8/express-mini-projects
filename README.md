@@ -1,4 +1,4 @@
-# 🚀 Express Mini Projects
+#  Express Mini Projects
 
 Este repositorio contiene mini proyectos desarrollados con **Node.js + Express**, cada uno acompañado de un pequeño proyecto Java con Maven usado para **probar su funcionalidad** mediante solicitudes HTTP.
 
